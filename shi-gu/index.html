@@ -1,0 +1,257 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>我的事故总结 | 大伟前端笔记</title>
+<link rel="shortcut icon" href="https://www.liuwei.link/favicon.ico?v=1673592860180">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://www.liuwei.link/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="我的事故总结 | 大伟前端笔记 - Atom Feed" href="https://www.liuwei.link/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="不经意间 经常事故爆出，总结事故
+
+线上环境 新增配置 拼写错误
+.env.production  多了一个等号
+vue-cli 工程： VUE_APP_API_ORDER_HOST == https://api.com/api
+问题关键：..." />
+    <meta name="keywords" content="项目管理" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://www.liuwei.link">
+  <img class="avatar" src="https://www.liuwei.link/images/avatar.png?v=1673592860180" alt="">
+  </a>
+  <h1 class="site-title">
+    大伟前端笔记
+  </h1>
+  <p class="site-description">
+    每天进步一点点
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          分类
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="https://liuwei2016.github.io/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://liuwei2016.github.com" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              我的事故总结
+            </h2>
+            <div class="post-info">
+              <span>
+                2021-10-26
+              </span>
+              <span>
+                3 min read
+              </span>
+              
+                <a href="https://www.liuwei.link/tag/rxgUyuVjj/" class="post-tag">
+                  # 项目管理
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://images.unsplash.com/photo-1609840534277-88833ef3ddeb?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTgwOTN8MHwxfHNlYXJjaHw0fHxhY2NpZGVudHxlbnwwfHx8fDE2MzUyNDY2MzY&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=1080" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>不经意间 经常事故爆出，总结事故</p>
+<!-- more -->
+<h3 id="线上环境-新增配置-拼写错误">线上环境 新增配置 拼写错误</h3>
+<p>.env.production  多了一个等号<br>
+vue-cli 工程： VUE_APP_API_ORDER_HOST == https://api.com/api</p>
+<p>问题关键：<br>
+1.细心检查，<br>
+2 对配置文件进行自动化检查</p>
+<h3 id="突然checkbox-图标消失了">突然checkbox 图标消失了</h3>
+<ol>
+<li>组件库的 字体文件存在问题</li>
+<li>前端的资源 和运维策略强相关</li>
+</ol>
+<h3 id="大屏复盘">大屏复盘</h3>
+<p>2020年5月份针对大屏做了一个新版本, 做一次分享作为复盘</p>
+<p>5月27日晚上确定方案, 制定好计划, 并安排好人员, 拆分任务正式启动了”最美数据大屏”项目</p>
+<ul>
+<li>做一版 PPT(v0.1 MVP, 重点在于可交付)</li>
+<li>做一版 datav 的实现(v1.0, 重点在于简单动画)</li>
+<li>做一版代码实现(v2.0, 重点在于实现流畅自然的动画效果)</li>
+</ul>
+<p>项目过程为: 7个人, 花了6天的时间, 做了7屏8页, 发了9个版本</p>
+<p>期间遇到的最大挑战有</p>
+<ol>
+<li>外部因素</li>
+<li>浏览器崩溃</li>
+<li>动画卡顿</li>
+<li>翻页笔的兼容性问题</li>
+</ol>
+<p>经历过大屏项目之后, 我们了解到大屏的本质: 一个长时间不间断运行的网页<br>
+由于其需要长期可用, 所以会遇到一系列平时不太需要考虑的问题, 主要有</p>
+<ol>
+<li>CPU 问题</li>
+<li>内存问题</li>
+<li>卡顿问题</li>
+<li>崩溃问题</li>
+<li>在长时间运行的过程中各种可能出现的意外情况</li>
+</ol>
+<p>意识到大屏的要素: 内容和稳定永远是第一位的</p>
+<p>针对此次项目的经验有</p>
+<ul>
+<li>别炫技, 别炫技, 别炫技</li>
+<li>逻辑越简单越好, 动画越少越好, 不出问题才是真理</li>
+<li>拒绝 iframe</li>
+<li>尽量选用 CSS 动画, 少用 JS 动画</li>
+<li>尽量选用 RAF 实现动画, 少用 setTimeout 类</li>
+<li>尽早做页面的压力测试(记得断网), 发现性能问题</li>
+<li>尽早做断网测试, 做好兜底逻辑</li>
+<li>一定要做好双机备份, 最好准备一个网页截图 PPT 以防万一</li>
+</ul>
+<p>针对此次项目还能够改进的有</p>
+<ul>
+<li>大屏适配, 实时数据推送</li>
+<li>如果现场出现意外情况怎么办? 远程控制, 快速恢复!</li>
+<li>如何彻底避免翻页笔硬件带来的问题? 软遥控器!</li>
+<li>如何避免浏览器失去焦点?</li>
+<li>自动切换自动翻页模式与手动翻页模式</li>
+<li>用 PPT 可以做出来吗?</li>
+<li>应急预案, 万一出现系统弹窗怎么办? 主屏副屏能 hold 住所有的情况吗? 有必要做一个独立的桌面应用!</li>
+</ul>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E7%BA%BF%E4%B8%8A%E7%8E%AF%E5%A2%83-%E6%96%B0%E5%A2%9E%E9%85%8D%E7%BD%AE-%E6%8B%BC%E5%86%99%E9%94%99%E8%AF%AF">线上环境 新增配置 拼写错误</a></li>
+<li><a href="#%E7%AA%81%E7%84%B6checkbox-%E5%9B%BE%E6%A0%87%E6%B6%88%E5%A4%B1%E4%BA%86">突然checkbox 图标消失了</a></li>
+<li><a href="#%E5%A4%A7%E5%B1%8F%E5%A4%8D%E7%9B%98">大屏复盘</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://www.liuwei.link/qian-duan-nan-ti/">
+              <h3 class="post-title">
+                前端难题
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  <a 
+target="_blank"
+href="http://beian.miit.gov.cn/publish/query/indexFirst.action">湘ICP备2023000574号</a>
+&nbsp;&nbsp;
+
+ Powered by <a href="https://www.liuwei.link/" target="_blank">大伟前端笔记</a> 
+  <a class="rss" href="https://www.liuwei.link/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

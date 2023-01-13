@@ -1,0 +1,371 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>javascript 核心知识 | 大伟前端笔记</title>
+<link rel="shortcut icon" href="https://www.liuwei.link/favicon.ico?v=1673592860180">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://www.liuwei.link/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="javascript 核心知识 | 大伟前端笔记 - Atom Feed" href="https://www.liuwei.link/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="js核心概念
+与大多数编程语言不同，JavaScript 没有输入或输出的概念。它是一个在宿主环境（host environment）下运行的脚本语言，任何与外界沟通的机制都是由宿主环境提供的。浏览器是最常见的宿主环境，但在非常多的其他程序..." />
+    <meta name="keywords" content="JS" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://www.liuwei.link">
+  <img class="avatar" src="https://www.liuwei.link/images/avatar.png?v=1673592860180" alt="">
+  </a>
+  <h1 class="site-title">
+    大伟前端笔记
+  </h1>
+  <p class="site-description">
+    每天进步一点点
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          分类
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="https://liuwei2016.github.io/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://liuwei2016.github.com" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              javascript 核心知识
+            </h2>
+            <div class="post-info">
+              <span>
+                2021-11-30
+              </span>
+              <span>
+                6 min read
+              </span>
+              
+                <a href="https://www.liuwei.link/tag/JS/" class="post-tag">
+                  # JS
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://images.unsplash.com/photo-1579820010410-c10411aaaa88?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwxMTgwOTN8MHwxfHNlYXJjaHwyOXx8amF2YXNjcmlwdHxlbnwwfHx8fDE2NDAzMzYwNjI&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=1080" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h1 id="js核心概念">js核心概念</h1>
+<p>与大多数编程语言不同，JavaScript 没有输入或输出的概念。它是一个在宿主环境（host environment）下运行的脚本语言，任何与外界沟通的机制都是由宿主环境提供的。浏览器是最常见的宿主环境，但在非常多的其他程序中也包含 JavaScript 解释器，如 Adobe Acrobat、Adobe Photoshop、SVG 图像、Yahoo! 的 Widget 引擎，Node.js 之类的服务器端环境，NoSQL 数据库（如开源的 Apache CouchDB）、嵌入式计算机，以及包括 GNOME （注：GNU/Linux 上最流行的 GUI 之一）在内的桌面环境等等。</p>
+<p>JavaScript 是一种多范式的动态语言，它包含类型、运算符、标准内置（ built-in）对象和方法。它的语法来源于 Java 和 C，所以这两种语言的许多语法特性同样适用于 JavaScript。JavaScript 通过原型链而不是类来支持面向对象编程（有关 ES6 类的内容参考这里Classes，有关对象原型参考见此继承与原型链）。JavaScript同样支持函数式编程——因为它们也是对象，函数也可以被保存在变量中，并且像其他对象一样被传递。</p>
+<h2 id="1基础数据类型">1.基础数据类型</h2>
+<ul>
+<li>null</li>
+<li>string</li>
+<li>number</li>
+<li>undefined</li>
+<li>bigInt</li>
+<li>symbol</li>
+<li>boolean</li>
+<li></li>
+</ul>
+<h2 id="其他数据类型">其他数据类型</h2>
+<p>Object</p>
+<p>Function<br>
+Date<br>
+Regexp<br>
+Array<br>
+Set<br>
+Map</p>
+<h3 id="类型判断">类型判断</h3>
+<p>7 种原始类型，使用 typeof 运算符检查:<br>
+undefined：typeof instance === &quot;undefined&quot;<br>
+Boolean：typeof instance === &quot;boolean&quot;<br>
+Number：typeof instance === &quot;number&quot;<br>
+String：typeof instance === &quot;string<br>
+BigInt：typeof instance === &quot;bigint&quot;<br>
+Symbol ：typeof instance === &quot;symbol&quot;<br>
+null：typeof instance === &quot;object&quot;。</p>
+<ul>
+<li>记住 typeof 操作符的唯一目的就是检查数据类型，如果我们希望检查任何从 Object 派生出来的结构类型，使用 typeof 是不起作用的，因为总是会得到 &quot;object&quot;。</li>
+<li>检查 Object 种类的合适方式是使用 <strong>instanceof</strong> 关键字。但即使这样也存在误差。</li>
+</ul>
+<hr>
+<h3 id="this-指向">this 指向</h3>
+<h3 id="对象继承">对象继承</h3>
+<h3 id="原型联调">原型联调</h3>
+<h3 id="js数组">js数组</h3>
+<ol>
+<li>Array.isArray 判断<br>
+2.可迭代对象</li>
+</ol>
+<h3 id="applycall-bind">apply，call ，bind</h3>
+<ul>
+<li>react 组件 bind 绑定this</li>
+<li>apply ，call 实现组合式继承</li>
+<li>apply 展开参数等 ，实现递归</li>
+</ul>
+<h3 id="new-实现">new 实现</h3>
+<blockquote>
+<p>原理</p>
+</blockquote>
+<ol>
+<li>创建一个简单的js对象</li>
+<li>链接该对象（设置该对象的构造函数）到另外一个对象</li>
+</ol>
+<pre><code>function create() {
+   let Con = [].shift.call(arguments);
+   let obj = Object.create(Con.prototype);
+   let result = Con.apply(obj, arguments);
+   return typeof result === &quot;object&quot; ? result : obj;
+}
+</code></pre>
+<hr>
+<h3 id="object">object</h3>
+<p>create<br>
+getPrototypeOf 获取原型对象</p>
+<h3 id="继承与原型链">继承与原型链</h3>
+<p>对于使用过基于类的语言 (如 Java 或 C++) 的开发者们来说，JavaScript 实在是有些令人困惑 —— JavaScript 是动态的，本身不提供一个 class 的实现。即便是在 ES2015/ES6 中引入了 class 关键字，但那也只是语法糖，JavaScript 仍然是基于原型的。</p>
+<p>当谈到继承时，JavaScript 只有一种结构：对象。每个实例对象（object）<strong>都有一个私有属性</strong>（称之为 <strong>proto</strong> ）指向它的构造函数的原型对象（prototype）。该原型对象也有一个自己的原型对象（<strong>proto</strong>），层层向上直到一个对象的原型对象为 null。根据定义，null 没有原型，并作为这个原型链中的最后一个环节。</p>
+<p>几乎所有 JavaScript 中的对象都是位于原型链顶端的 Object 的实例。</p>
+<p><strong>尽管这种原型继承通常被认为是 JavaScript 的弱点之一，但是原型继承模型本身实际上比经典模型更强大。例如，在原型模型的基础上构建经典模型相当简单。</strong></p>
+<h3 id="原型链与作用域链">原型链与作用域链</h3>
+<hr>
+<h3 id="array">Array</h3>
+<p>1 .reducer  实现 组合函数<br>
+2 .from 讲类数组 转为数组</p>
+<h3 id="promise">promise</h3>
+<h3 id="symbol">symbol</h3>
+<ol>
+<li>案例</li>
+<li></li>
+</ol>
+<h3 id="set">set</h3>
+<h3 id="map">map</h3>
+<h3 id="weakmap">weakmap</h3>
+<ul>
+<li>vue3 响应式 ref</li>
+</ul>
+<h3 id="事件循环">事件循环</h3>
+<p>eventloop<br>
+微任务<br>
+宏任务</p>
+<h3 id="模式">模式</h3>
+<p>观察者模式<br>
+发布订阅模式</p>
+<h3 id="匿名函数使用">匿名函数使用</h3>
+<ul>
+<li>babel 构建块级作用域</li>
+</ul>
+<h3 id="闭包的使用">闭包的使用</h3>
+<p>1.mdn解释<br>
+一个函数和对其周围状态（lexical environment，词法环境）的引用捆绑在一起（或者说函数被引用包围），这样的组合就是闭包（closure）。也就是说，闭包让你可以在一个内层函数中访问到其外层函数的作用域。在 JavaScript 中，每当创建一个函数，闭包就会在函数创建的同时被创建出来。</p>
+<p>笔记：闭包 就是外部函数应用了 内部函数的作用域下的变量 ，或者说 子函数 引用了 ，父函数作用域内的变量</p>
+<ol>
+<li>函数缓存 memorize</li>
+<li>函数柯理化 carry</li>
+<li>组合函数</li>
+<li>闭包模拟私有变量</li>
+</ol>
+<pre><code class="language-javascript">var Counter = (function() {
+  var privateCounter = 0;
+  function changeBy(val) {
+    privateCounter += val;
+  }
+  return {
+    increment: function() {
+      changeBy(1);
+    },
+    decrement: function() {
+      changeBy(-1);
+    },
+    value: function() {
+      return privateCounter;
+    }
+  }
+})();
+
+console.log(Counter.value()); /* logs 0 */
+Counter.increment();
+Counter.increment();
+console.log(Counter.value()); /* logs 2 */
+Counter.decrement();
+console.log(Counter.value()); /* logs 1 */
+
+</code></pre>
+<h3 id="闭包性能考量">闭包性能考量</h3>
+<p>如果不是某些特定任务需要使用闭包，在其它函数中创建函数是不明智的，因为闭包在处理速度和内存消耗方面对脚本性能具有负面影响。</p>
+<p>例如，在创建新的对象或者类时，方法通常应该关联于对象的原型，而不是定义到对象的构造器中。原因是这将导致每次构造器被调用时，方法都会被重新赋值一次（也就是说，对于每个对象的创建，方法都会被重新赋值）。</p>
+<h3 id="函数式编程">函数式编程</h3>
+<ul>
+<li>
+<p>纯函数</p>
+</li>
+<li>
+<p>高阶函数<br>
+render 函数<br>
+react render 函数</p>
+</li>
+<li>
+<p>函数柯理化</p>
+</li>
+<li>
+<p>函子</p>
+</li>
+</ul>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li><a href="#js%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5">js核心概念</a>
+<ul>
+<li><a href="#1%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">1.基础数据类型</a></li>
+<li><a href="#%E5%85%B6%E4%BB%96%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">其他数据类型</a>
+<ul>
+<li><a href="#%E7%B1%BB%E5%9E%8B%E5%88%A4%E6%96%AD">类型判断</a></li>
+<li><a href="#this-%E6%8C%87%E5%90%91">this 指向</a></li>
+<li><a href="#%E5%AF%B9%E8%B1%A1%E7%BB%A7%E6%89%BF">对象继承</a></li>
+<li><a href="#%E5%8E%9F%E5%9E%8B%E8%81%94%E8%B0%83">原型联调</a></li>
+<li><a href="#js%E6%95%B0%E7%BB%84">js数组</a></li>
+<li><a href="#applycall-bind">apply，call ，bind</a></li>
+<li><a href="#new-%E5%AE%9E%E7%8E%B0">new 实现</a></li>
+<li><a href="#object">object</a></li>
+<li><a href="#%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE">继承与原型链</a></li>
+<li><a href="#%E5%8E%9F%E5%9E%8B%E9%93%BE%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE">原型链与作用域链</a></li>
+<li><a href="#array">Array</a></li>
+<li><a href="#promise">promise</a></li>
+<li><a href="#symbol">symbol</a></li>
+<li><a href="#set">set</a></li>
+<li><a href="#map">map</a></li>
+<li><a href="#weakmap">weakmap</a></li>
+<li><a href="#%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF">事件循环</a></li>
+<li><a href="#%E6%A8%A1%E5%BC%8F">模式</a></li>
+<li><a href="#%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8">匿名函数使用</a></li>
+<li><a href="#%E9%97%AD%E5%8C%85%E7%9A%84%E4%BD%BF%E7%94%A8">闭包的使用</a></li>
+<li><a href="#%E9%97%AD%E5%8C%85%E6%80%A7%E8%83%BD%E8%80%83%E9%87%8F">闭包性能考量</a></li>
+<li><a href="#%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B">函数式编程</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://www.liuwei.link/WbEr8c77j/">
+              <h3 class="post-title">
+                vue3心得
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  <a 
+target="_blank"
+href="http://beian.miit.gov.cn/publish/query/indexFirst.action">湘ICP备2023000574号</a>
+&nbsp;&nbsp;
+
+ Powered by <a href="https://www.liuwei.link/" target="_blank">大伟前端笔记</a> 
+  <a class="rss" href="https://www.liuwei.link/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
